@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url(fontawesome-all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:300,400,500,600,700,800,900&display=swap');
+@font-face {
+    font-family: ChunkFive;
+    src: url(/fonts/Chunkfive\ Ex.ttf);
+}
+* 
+{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif, 'ChunkFive';
+
+}
+
+
+.home .carousel-item{
+	min-height: 100vh;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+	z-index: 1;
+}
+.home .carousel-item:before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: -1;
+}
+.home .carousel-item .container{
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	z-index: 100;
+}
+.home .carousel-item h2{
+	font-family: 'Kaushan Script', cursive;
+	font-size: 80px;
+	color: #fff;
+	margin: 0 0 10px;
+	opacity: 0;
+	z-index: 3;
+	position: relative;
+}
+.home .carousel-item p{
+	font-family: "ChunkFive";
+	font-size: 24px;
+	margin: 0;
+	color: #eee;
+	opacity: 0;
+	text-transform: uppercase;
+	z-index: 3;
+	position: relative;
+}
+.home .carousel-item.active h2{
+	animation: fadeInLeft 0.5s ease forwards;
+}
+.home .carousel-item.active p{
+	animation: fadeInRight 0.5s ease forwards;
+}
+
+/*********************** Arrow Indication *************************/
+.home .carousel-controls{
+	position: absolute;
+	left: 50%;
+	bottom: 40px;
+	z-index: 10;
+	transform: translate(-50%);
+}
+.home .carousel-indicators{
+	position: relative;
+	margin: 0;
+}
+.home .carousel-indicators li{
+	width: 70px;
+	height: 70px;
+	margin: 0 5px;
+	border-radius: 50%;
+	background-position: center;
+	background-size: cover;
+	border: 3px solid transparent;
+	transition: all 0.3s ease;
+}
+.home .carousel-control-next img,
+.home .carousel-control-prev img{
+	width: 30px;
+}
+.home .carousel-control-next{
+	right: -90px;
+}
+.home .carousel-control-prev{
+	left: -90px;
+}
+.home .carousel-indicators li.active{
+	border-color:#fff;
+	transform: scale(1.2);
+}
+.home .carousel-control-next,
+.home .carousel-control-prev{
+	width: 60px;
+	height: 60px;
+	opacity: 1;
+	z-index: 3;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
+.home .carousel-control-next:hover,
+.home .carousel-control-prev:hover{
+	box-shadow: 0 0 10px #fff;
+}
+
+@keyframes fadeInLeft{
+	0%{
+		opacity: 0;
+		transform: translateX(-30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+@keyframes fadeInRight{
+	0%{
+		opacity: 0;
+		transform: translateX(30px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+.navbar-light .navbar-nav .nav-link{
+    color: gold;
+    font-size: 16px;
+}
+.navbar-light .navbar-brand{
+    color: black;
+    font-size: 30px;
+}
+header{
+    height: 100vh;
+    min-height: 400px;
+    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1470434151738-dc5f4474c239?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb");
+}
+.bg-dark{
+    background: black !important;
+}
+/*media Query*/
+@media only screen and (max-width:600px){
+    .navbar-collapse {
+        background: black;
+    }
+}
+/*media Query*/
+@media only screen and (max-width:600px){
+    header{
+        background-position: 20% 33%;
+		z-index: 105;
+    }
+	.navbar-light .navbar-nav .nav-link{
+		color: gold;
+		font-size: 22px;
+	}
+	.navbar-light .navbar-brand{
+		color: gold;
+		font-size: 30px;
+	}
+
+}
+
+/*Responsive*/
+@media(max-width: 767px){
+	.home .carousel-control-next,
+	.home .carousel-control-prev{
+		display: none;
+	}	
+	.home .carousel-indicators li{
+		width: 60px;
+		height: 60px;
+	}
+	.home .carousel-item h2{
+		font-size: 45px;
+	}
+	.home .carousel-item p{
+		font-size: 22px;
+	}
+}
