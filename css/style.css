@@ -14,6 +14,10 @@
     font-family: sans-serif, 'ChunkFive';
 
 }
+.col-lg-8 .bi 
+{
+  color: gray;
+}
 
 
 .home .carousel-item{
@@ -76,7 +80,7 @@
 	position: absolute;
 	left: 50%;
 	bottom: 40px;
-	z-index: 10;
+	z-index: 11;
 	transform: translate(-50%);
 }
 .home .carousel-indicators{
@@ -102,10 +106,18 @@
 	border: 1px solid transparent;
 	border-radius: 0.25rem;
 	transition: box-shadow 0.15s ease-in-out;
-	right: 0px;
 	position:relative;
+	left: 10px;
   }
+.navbar .container{
+	justify-content:flex-start;
+}
 
+.py-5 .container {
+	display: flex;
+	flex-shrink: 2;
+	flex: 1;
+}
 .navbar-nav {
 	display: flex;
 	flex-direction: column;
@@ -174,9 +186,10 @@
 }
 header{
     height: 100vh;
-    min-height: 400px;
+    min-height: 10%;
     background-size: cover;
-    background-image: url("https://images.unsplash.com/photo-1470434151738-dc5f4474c239?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb");
+	z-index: -1;
+    /*background-image: url("https://images.unsplash.com/photo-1470434151738-dc5f4474c239?dpr=1&auto=format&crop=entropy&fit=crop&w=1500&h=1000&q=80&cs=tinysrgb");*/
 }
 .bg-dark{
     background: black !important;
@@ -200,6 +213,11 @@ header{
 	.navbar-light .navbar-brand{
 		color: gold;
 		font-size: 22px;
+	}
+	.py-5 .container {
+		display: flex;
+		flex-shrink: 2;
+		flex: 1;
 	}
 
 }
